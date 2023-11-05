@@ -4,4 +4,4 @@
 kubectl hlf chaincode invoke --config=/home/ubuntu/org1.yaml \
     --user=admin --peer=org1-peer0.default \
     --chaincode=asset --channel=demo \
-    --fcn=$1 -a '[]'
+    --fcn=$1 $2
