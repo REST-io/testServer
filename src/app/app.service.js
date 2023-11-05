@@ -8,7 +8,13 @@ export const executeDeploymentScripts = async (req, res) => {
 
     const argumentLine = argument
       .reduce((acc, curr) => {
-        return acc + `-a '${curr}' `;
+        if (typeof curr === "string") {
+          return acc + `-a '${curr}' `;
+        } else if (typeof curr === "number") {
+          return acc + `-a ${curr} `;
+        } else {
+          return acc;
+        }
       }, "")
       .trim();
 
