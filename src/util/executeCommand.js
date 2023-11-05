@@ -9,7 +9,7 @@ export const executeCommand = async (command) => {
     if (stderr) {
       console.error(`stderr: ${stderr}`);
     }
-    return stdout; // stderr가 있더라도 stdout을 반환합니다.
+    return stdout;
   } catch (error) {
     console.error(`실행 중 오류 발생: ${error}`);
     throw error;
